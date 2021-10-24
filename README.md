@@ -12,8 +12,9 @@
 
 | <b>Name</b> | <b>Source</b> |
 | :--- | :---: |
-| <a href="https://www.udemy.com/course/practical-aws-sagemaker-6-real-world-case-studies/"><em>Employee Salary Prediction - Using AWS SageMaker Linear Learner</em></a> | ![Udemy](https://img.shields.io/badge/Udemy-A435F0?style=flat-square&logo=Udemy&logoColor=white) |
-| <a href="https://www.udemy.com/course/practical-aws-sagemaker-6-real-world-case-studies/"><em>Medical Insurance Premium Prediction - Linear Learner - Artificial Neural Network</em></a> | ![Udemy](https://img.shields.io/badge/Udemy-A435F0?style=flat-square&logo=Udemy&logoColor=white) |
+| <a href="https://github.com/debdattasarkar/SageMaker-Practice-on-AWS/blob/master/1%20Employee%20Salary%20Prediction%20-%20Using%20AWS%20SageMaker%20Linear%20Learner/employee_salary_prediction_notebook.ipynb"><em>Employee Salary Prediction - Using AWS SageMaker Linear Learner</em></a> | [![Udemy](https://img.shields.io/badge/Udemy-A435F0?style=flat-square&logo=Udemy&logoColor=white)](https://www.udemy.com/course/practical-aws-sagemaker-6-real-world-case-studies/) |
+| <a href="https://github.com/debdattasarkar/SageMaker-Practice-on-AWS/blob/master/2%20Medical%20Insurance%20Premium%20Prediction%20-%20Linear%20Learner%20-%20Artificial%20Neural%20Network/medical_insurance_prediction_notebook.ipynb"><em>Medical Insurance Premium Prediction - Linear Learner - Artificial Neural Network</em></a> | [![Udemy](https://img.shields.io/badge/Udemy-A435F0?style=flat-square&logo=Udemy&logoColor=white)](https://www.udemy.com/course/practical-aws-sagemaker-6-real-world-case-studies/) |
+| <a href="https://github.com/debdattasarkar/SageMaker-Practice-on-AWS/blob/master/3%20Retail%20Sales%20Prediction%20-%20Using%20AWS%20SageMaker%20XGBoost%20(Regression)/retail_sales_forecast_notebook.ipynb"><em>Retail Sales Prediction - Using AWS SageMaker XGBoost (Regression)</em></a> | [![Udemy](https://img.shields.io/badge/Udemy-A435F0?style=flat-square&logo=Udemy&logoColor=white)](https://www.udemy.com/course/practical-aws-sagemaker-6-real-world-case-studies/) |
 
 ### 🤺 AWS Sagemaker CLI Commands
 
@@ -22,9 +23,13 @@
 
 ```
 aws --region Region sagemaker list-domains
-
+```
+Example
+```
 aws --region us-east-2 sagemaker list-domains
-
+```
+Output
+```
 [cloudshell-user@ip-10-0-137-51 ~]$ aws --region us-east-2 sagemaker list-domains
 {
     "Domains": [
@@ -48,10 +53,14 @@ aws --region us-east-2 sagemaker list-domains
 ```
 aws --region Region sagemaker list-apps \
     --domain-id-equals DomainId
-
+```
+Example
+```
 aws --region us-east-2 sagemaker list-apps \
         --domain-id-equals d-mxkxcy82frnd
-
+```
+Output
+```
 [cloudshell-user@ip-10-0-137-51 ~]$ aws --region us-east-2 sagemaker list-apps \
 >         --domain-id-equals d-mxkxcy82frnd
 {
@@ -86,14 +95,16 @@ aws --region Region sagemaker delete-app \
     --app-name AppName \
     --app-type AppType \
     --user-profile-name UserProfileName
-
+```
+Example
+```
 aws --region us-east-2 sagemaker delete-app \
     --domain-id d-mxkxcy82frnd \
     --app-name default \
     --app-type JupyterServer \
     --user-profile-name debdattasagemaker
 ```
-
+Output
 ```
 [cloudshell-user@ip-10-0-137-51 ~]$ aws --region us-east-2 sagemaker delete-app \
 >     --domain-id d-mxkxcy82frnd \
@@ -132,6 +143,7 @@ aws --region us-east-2 sagemaker delete-app \
     --app-type KernelGateway \
     --user-profile-name debdattasagemaker
 ```
+Output
 ```
 [cloudshell-user@ip-10-0-137-51 ~]$ aws --region us-east-2 sagemaker list-apps         --domain-id-equals d-mxkxcy82frnd{
     "Apps": [
@@ -162,11 +174,13 @@ aws --region us-east-2 sagemaker delete-app \
 ```
 aws --region Region sagemaker list-user-profiles \
     --domain-id-equals DomainId
-
+```
+Example
+```
 aws --region us-east-2 sagemaker list-user-profiles \
     --domain-id-equals d-mxkxcy82frnd
 ```
-
+Output
 ```
 [cloudshell-user@ip-10-0-137-51 ~]$ aws --region us-east-2 sagemaker list-user-profiles \
 >     --domain-id-equals d-mxkxcy82frnd
@@ -191,11 +205,14 @@ aws --region us-east-2 sagemaker list-user-profiles \
 aws --region Region sagemaker delete-user-profile \
     --domain-id DomainId \
     --user-profile-name UserProfileName
-
+```
+Example
+```
 aws --region us-east-2 sagemaker delete-user-profile \
     --domain-id d-mxkxcy82frnd \
     --user-profile-name 
 ```
+Output
 ```
 [cloudshell-user@ip-10-0-137-51 ~]$ aws --region us-east-2 sagemaker delete-user-profile \
 >    --domain-id d-mxkxcy82frnd \
@@ -210,11 +227,14 @@ aws --region us-east-2 sagemaker delete-user-profile \
 aws --region Region sagemaker delete-domain \
     --domain-id DomainId \
     --retention-policy HomeEfsFileSystem=Retain
-
+```
+Example
+```
 aws --region us-east-2 sagemaker delete-domain \
     --domain-id d-mxkxcy82frnd \
     --retention-policy HomeEfsFileSystem=Delete
 ```
+Output
 ```
 [cloudshell-user@ip-10-0-137-51 ~]$ aws --region us-east-2 sagemaker delete-domain \
 >     --domain-id d-mxkxcy82frnd \
